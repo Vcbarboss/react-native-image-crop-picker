@@ -50,6 +50,7 @@ RCT_EXPORT_MODULE();
     if (self = [super init]) {
         self.defaultOptions = @{
             @"multiple": @NO,
+            @"duration": @0,
             @"cropping": @NO,
             @"cropperCircleOverlay": @NO,
             @"writeTempFile": @YES,
@@ -158,6 +159,7 @@ RCT_EXPORT_METHOD(openCamera:(NSDictionary *)options
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             
             NSString *mediaType = [self.options objectForKey:@"mediaType"];
+            NSNumber *duration = [self.options valueForKey:@"duration"];
             
             if ([mediaType isEqualToString:@"video"]) {
                 NSArray *availableTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -166,6 +168,9 @@ RCT_EXPORT_METHOD(openCamera:(NSDictionary *)options
                     picker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
                     picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
                 }
+                if (duration != NULL && duration > 0) {
+                                    picker.videoMaximumDuration = [duration doubleValue];
+                                }
             }
             
             if ([[self.options objectForKey:@"useFrontCamera"] boolValue]) {
