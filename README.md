@@ -15,10 +15,9 @@ iOS/Android image picker with support for camera, video, configurable compressio
   <img width=200 title="iOS Crop Circular" src="https://github.com/ivpusic/react-native-image-crop-picker/blob/master/images/ios_circular_crop.png">
 </p>
 
-## Important notes
+## Important note
 
-1. If you are using react-native >= 0.60 use react-native-image-crop-picker version >= 0.25.0. Otherwise use version < 0.25.0.
-2. If you want to use react-native-image-crop-picker version >= 0.39.0 you have to set your android compileSdkVersion to 33 or greather. Otherwise use react-native-image-crop-picker version < 0.39.0
+If you are using react-native >= 0.60 use react-native-image-crop-picker version >= 0.25.0. Otherwise use version < 0.25.0.
 
 ## Usage
 
