@@ -336,9 +336,6 @@ declare module "react-native-image-crop-picker" {
     type VideoOptions = CommonOptions & {
         mediaType: 'video';
 
-        duration?: number;
-
-
         /**
          * Choose which preset will be used for video compression.
          *
